@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> 
+        <meta charset="UTF-8">
+        <title> Artist Highlight</title>
+        
+        <style>
+            p {
+                line-height: 1.6;
+                font-size: 1.1em;
+            }
+            *{
+                box-sizing: border-box;
+            }
+             h1{
+                color: white;
+            }
+        body {
+        background-color: black;
+        text-align: center;
+        margin:0;
+        padding: 0;
+        }
+        header{
+        margin: 40px 0; /*Center the header*/
+        width: 100%;
+        color: white;
+        }       
+        main {
+         margin: 40px auto;
+            color: white;
+            max-width: 1000px; /*images size*/
+            padding: 0 15px;
+        }
+        nav {
+        margin-top: 20px;
+        }
+        nav a{
+        display:inline-block;  /* box*/
+        background-color: #ff4e6b;      /*color*/
+        color:white; /*text color*/     
+        margin: 10px; /*the space between boxes*/
+        padding: 20px 15px; /*box size*/
+        border-radius: 10px; /* rounded corners*/
+        font-weight: bold; 
+        font-size: 1.5em;
+        transition: all 0.3s ease; /*smooth hover animation*/
+        cursor: pointer;
+        text-decoration: none; /*removes underline*/
+        }
+        nav a:hover{
+        background-color: white; /*color on hover*/
+        color: #ff4e6b; /*color swap*/
+        transform: scale(1.05); /* zoom effect*/
+
+        }
+        section{
+        margin-bottom: 60px;
+        }
+        .gallery{
+        background: #ff4e6b;
+        padding: 16px;
+        border-radius: 12px;
+        background-color: black;
+        max-width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 16px;
+            justify-items: center; /* Centers all tiles horizontally in the grid */
+         }
+    .tile{
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1; 
+    border: 2px solid #ff4e6b;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background-color: black;
+
+
+   }
+   .tile img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    display: block;
+    transition: 0.3s ease;
+    border-radius: 10px;
+   }
+   .tile:hover img{
+    transform: scale(1.05);
+
+   }
+   .tile figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 12px;
+        font-size: 1.05em;
+        text-align: center;
+        color: white;
+        background: linear-gradient(transparent, rgba(0,0,0,0.75));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }   
+    .tile:hover figcaption { opacity: 1;  /*this and .tile figcaption allows for name to show on hover*/
+    }
+    
+   /* Responsive design */
+   @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+    }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1> My favorite genres!</h1>
+        </header>
+
+        <main>
+           <p class="lede"> These 6 below are my favorite genres of all time! The images show my favorite artist from each genre.<br>
+            Click on them to learn more about the genres!
+            </p>
+
+            <!-- 3x2 gallery over here-->
+             <section class = "gallery" aria-label="Genre collage">
+                <div class="grid">
+                    <!--first row-->
+                    <a href="https://en.wikipedia.org/wiki/Pop_music" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/KingOfPop.jpg" alt = "Hee Hee"/>
+                        <figcaption>Pop</figcaption>
+                    </figure>
+                        </a>
+                        <a href="https://hub.yamaha.com/brand/creativity/what-is-bedroom-pop/" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/MenITrust.jpg" alt = "Men I definitely trust"/>
+                        <figcaption>Bedroom Pop</figcaption>
+                    </figure>
+                        </a>
+                        <a href="https://en.wikipedia.org/wiki/Rhythm_and_blues" target = "blank"> 
+                    <figure class = "tile">
+                        <img src = "images/MrTakeYourSong.jpg" alt = "5'5"/>
+                        <figcaption>RnB</figcaption>
+                    </figure>
+                        </a>
+
+                    <!-- second row-->
+                    <a href="https://en.wikipedia.org/wiki/Bachata_(music)" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/TellMeWhereShesAt.jpg" alt = "miAMOR"/>
+                        <figcaption>Bachata</figcaption>
+                    </figure>
+                    </a>
+                    <a href="https://en.wikipedia.org/wiki/Rock_music" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/AllTheyWanted.jpg" alt = "Panchiko"/>
+                        <figcaption>Rock</figcaption>
+                    </figure>
+                    </a>
+                    <a href="https://en.wikipedia.org/wiki/Hip-hop" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/Drowning.jpg" alt = "a boogie wid da hoodie"/>
+                        <figcaption>Hip-Hop/Rap</figcaption>
+                    </figure>
+                    </a>
+
+                </div>
+             </section>
+        </main>
+        <footer>
+            <nav> 
+                <a href="FinalProject.html">Homepage</a>
+            </nav>
+        </footer>
+        
+    </body>
+   
+
+</html>
