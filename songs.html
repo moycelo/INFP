@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> 
+        <meta charset="UTF-8">
+        <title> Song Highlight</title>
+        
+        <style>
+            p {
+                line-height: 1.6;
+                font-size: 1.1em;
+            }
+            *{
+                box-sizing: border-box;
+            }
+             h1{
+                color: white;
+            }
+        body {
+        background-color: black;
+        text-align: center;
+        margin:0;
+        padding: 0;
+        }
+        header{
+        margin: 40px 0; /*Center the header*/
+        width: 100%;
+        color: white;
+        }       
+        main {
+         margin: 40px auto;
+            color: white;
+            max-width: 1000px; /*images size*/
+            padding: 0 15px;
+        }
+        nav {
+        margin-top: 20px;
+        }
+        nav a{
+        display:inline-block;  /* box*/
+        background-color: #ff4e6b;      /*color*/
+        color:white; /*text color*/     
+        margin: 10px; /*the space between boxes*/
+        padding: 20px 15px; /*box size*/
+        border-radius: 10px; /* rounded corners*/
+        font-weight: bold; 
+        font-size: 1.5em;
+        transition: all 0.3s ease; /*smooth hover animation*/
+        cursor: pointer;
+        text-decoration: none; /*removes underline*/
+        }
+        nav a:hover{
+        background-color: white; /*color on hover*/
+        color: #ff4e6b; /*color swap*/
+        transform: scale(1.05); /* zoom effect*/
+
+        }
+        section{
+        margin-bottom: 60px;
+        }
+        .gallery{
+        background: #ff4e6b;
+        padding: 16px;
+        border-radius: 12px;
+        background-color: black;
+        max-width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 16px;
+            justify-items: center; /* Centers all tiles horizontally in the grid */
+         }
+    .tile{
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1; 
+    border: 2px solid #ff4e6b;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background-color: black;
+
+
+   }
+   .tile img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    display: block;
+    transition: 0.3s ease;
+    border-radius: 10px;
+   }
+   .tile:hover img{
+    transform: scale(1.05);
+
+   }
+   .tile figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 12px;
+        font-size: 1.05em;
+        text-align: center;
+        color: white;
+        background: linear-gradient(transparent, rgba(0,0,0,0.75));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }   
+    .tile:hover figcaption { opacity: 1;  /*this and .tile figcaption allows for name to show on hover*/
+    }
+    
+   /* Responsive design */
+   @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+    }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1> My Favorite Songs!</h1>
+        </header>
+
+        <main>
+           <p class="lede"> There 6 songs are my favorite songs of all time. The line up is a never skip and I can definitely sing them word for word.<br>
+            Click on them to listen to it as well!
+            </p>
+
+            <!-- 3x2 gallery over here-->
+             <section class = "gallery" aria-label="Song collage">
+                <div class="grid">
+                    <!--first row-->
+                    <a href="https://www.youtube.com/watch?v=RQfMnq1cd1k&list=RDRQfMnq1cd1k&start_radio=1" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/7PM.jpg" alt = "Lizzy McAlpine">
+                        <figcaption>7PM by Lilacs ft Lizzy McAlpine</figcaption>
+                    </figure>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=zrzSHLmChfg&list=RDzrzSHLmChfg&start_radio=1" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/AllThatMatters.jpg" alt = "Justin Bieber">
+                        <figcaption>All That Matters by Justin Bieber</figcaption>
+                    </figure>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=a0OHkWX7B-E&list=RDa0OHkWX7B-E&start_radio=1" target = "blank"> 
+                    <figure class = "tile">
+                        <img src = "images/EverySummerTime.jpg" alt = "NIKI">
+                        <figcaption>Every Summertime by NIKI</figcaption>
+                    </figure>
+                        </a>
+
+                    <!-- second row-->
+                    <a href="https://www.youtube.com/watch?v=Z8SPwT3nQZ8&list=RDZ8SPwT3nQZ8&start_radio=1" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/iSmile.jpg" alt = "Kirk Franklin">
+                        <figcaption>I Smile by Kirk Franklin</figcaption>
+                    </figure>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=OyQIWH9huFw&list=RDOyQIWH9huFw&start_radio=1" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/NeuRoses.jpg" alt = "Daniel Caeser">
+                        <figcaption>Neu Roses by Daniel Caeser</figcaption>
+                    </figure>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=NQLR37Qw2AE&list=RDNQLR37Qw2AE&start_radio=1" target = "blank">
+                    <figure class = "tile">
+                        <img src = "images/Chicago.jpg" target = "blank">
+                        <figcaption>Chicago by Michael Jackson</figcaption>
+                    </figure>
+                    </a>
+
+                </div>
+             </section>
+        </main>
+        <footer>
+            <nav> 
+                <a href="FinalProject.html">Homepage</a>
+            </nav>
+        </footer>
+        
+    </body>
+   
+
+</html>
